@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block title %}Blockchain — HoneyChain{% endblock %}
+{% block content %}<div class="page-head"><div><div class="eyebrow">TRUST LEDGER</div><h1>Blockchain explorer</h1><p>A local SHA-256 hash chain for batch event integrity.</p></div><button class="btn" onclick="verifyChain()">Verify Blockchain</button></div>
+<div id="chainResult"></div><div class="panel"><div class="chain">{% for b in blocks %}<div class="block"><div><b>Block #{{b.block_number}}</b><span>{{b.batch_id}}</span></div><p>{{b.event_type}}</p><small>{{b.timestamp}}</small><div><small>Previous</small><code>{{b.previous_hash}}</code></div><div><small>Current</small><code>{{b.current_hash}}</code></div></div>{% endfor %}</div></div>
+<script>
+async function verifyChain(){const r=await fetch('{{url_for("verify_blockchain")}}',{method:'POST'});const d=await r.json();document.getElementById('chainResult').innerHTML='<div class="flash '+(d.valid?'success':'error')+'">'+(d.valid?'✓ ':'⚠ ')+d.message+'</div>';}
+</script>{% endblock %}

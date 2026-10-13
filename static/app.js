@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",()=>{setTimeout(()=>document.querySelectorAll(".flash").forEach(x=>{x.style.opacity="0.9"}),50);});

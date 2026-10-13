@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block title %}Sign in — HoneyChain{% endblock %}
+{% block content %}<div class="auth-card"><div class="eyebrow">WELCOME BACK</div><h1>Sign in</h1><p>Access your apiary and traceability records.</p>
+<form method="post"><label>Email<input name="email" type="email" required></label><label>Password<input name="password" type="password" required></label><button class="btn full">Sign in →</button></form>
+<p class="muted">New beekeeper? <a href="{{ url_for('register') }}">Create account</a></p></div>{% endblock %}

@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block title %}Admin — HoneyChain{% endblock %}
+{% block content %}<div class="page-head"><div><div class="eyebrow">ADMINISTRATION</div><h1>Admin dashboard</h1><p>Overview of users and traceability records.</p></div></div>
+<div class="panel"><h2>Users</h2><table><tr><th>Name</th><th>Email</th><th>Role</th><th>Created</th></tr>{% for u in users %}<tr><td>{{u.name}}</td><td>{{u.email}}</td><td>{{u.role}}</td><td>{{u.created_at[:10]}}</td></tr>{% endfor %}</table></div>
+<div class="panel"><h2>All batches</h2><table><tr><th>Batch</th><th>Hive</th><th>Status</th><th>Quantity</th></tr>{% for b in batches %}<tr><td>{{b.batch_id}}</td><td>{{b.hive_code}}</td><td>{{b.status}}</td><td>{{b.quantity}} kg</td></tr>{% endfor %}</table></div>{% endblock %}

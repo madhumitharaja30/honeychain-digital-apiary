@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}Dashboard — HoneyChain{% endblock %}
+{% block content %}<div class="page-head"><div><div class="eyebrow">APIARY OVERVIEW</div><h1>Welcome, {{ current_user }}</h1><p>One calm place to follow every drop of honey.</p></div><a class="btn" href="{{ url_for('batches') }}">+ New batch</a></div>
+<div class="cards">
+{% for label,val in [('Total Hives',stats.hives),('Healthy Hives',stats.healthy),('Honey Batches',stats.batches),('Verified Batches',stats.verified),('Pending Batches',stats.pending),('Honey Produced',stats.honey|string+' kg'),('Blockchain Events',stats.blocks),('Active Alerts',stats.alerts)] %}
+<div class="card"><span>{{label}}</span><strong>{{val}}</strong></div>{% endfor %}</div>
+<section class="panel"><div class="panel-head"><h2>Recent batch activity</h2><a href="{{ url_for('batches') }}">View all</a></div>
+<table><tr><th>Batch</th><th>Hive</th><th>Origin</th><th>Status</th><th></th></tr>
+{% for b in recent %}<tr><td><b>{{b.batch_id}}</b></td><td>{{b.hive_code}}</td><td>{{b.origin}}</td><td><span class="status {{b.status|lower}}">{{b.status}}</span></td><td><a href="{{url_for('batch_detail',batch_id=b.batch_id)}}">Open</a></td></tr>{% endfor %}</table></section>{% endblock %}

@@ -1,0 +1,3 @@
+{% extends "base.html" %}{% block title %}Analytics — HoneyChain{% endblock %}
+{% block content %}<div class="page-head"><div><div class="eyebrow">INSIGHTS</div><h1>Analytics</h1><p>Simple metrics generated from the live SQLite database.</p></div></div>
+<div class="detail-grid"><div class="panel"><h2>Honey by origin</h2>{% for x in locations %}<div class="bar-row"><span>{{x.origin}}</span><div class="bar"><i style="width:{{ [x.total*3,100]|min }}%"></i></div><b>{{x.total}} kg</b></div>{% endfor %}</div><div class="panel"><h2>Batch status</h2>{% for x in statuses %}<div class="bar-row"><span>{{x.status}}</span><div class="bar"><i style="width:{{x.total*20}}%"></i></div><b>{{x.total}}</b></div>{% endfor %}</div></div>{% endblock %}

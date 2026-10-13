@@ -1,0 +1,23 @@
+{% extends "base.html" %}{% block title %}HoneyChain — From Hive to Home{% endblock %}
+{% block content %}
+<section class="hero">
+<div class="eyebrow">THE DIGITAL APIARY STANDARD</div>
+<h1>From hive to <em>home.</em></h1>
+<p>A clear, credible bridge between living hives and verifiable digital records — so every jar carries its story with it.</p>
+<p class="tagline">From Hive to Home — Verified by Blockchain.</p>
+<div class="actions"><a class="btn" href="{{ url_for('login') }}">Start your apiary →</a><a class="btn ghost" href="{{ url_for('public_verify',batch_id='HC-2026-0001') }}">Verify a batch</a></div>
+</section>
+<section class="stats-strip"><div><b>24</b><span>hives under care</span></div><div><b>1,284 kg</b><span>journey tracked</span></div><div><b>100%</b><span>human-readable</span></div></section>
+<section class="section"><div class="eyebrow">HOW IT WORKS</div><h2>One journey. Every important event.</h2><div class="steps">
+<div><b>01</b><h3>Manage Hive</h3><p>Track colony and simulated hive conditions.</p></div>
+<div><b>02</b><h3>Record Harvest</h3><p>Create a unique batch and origin record.</p></div>
+<div><b>03</b><h3>Verify Quality</h3><p>Store submitted lab/quality information.</p></div>
+<div><b>04</b><h3>Hash the Journey</h3><p>Link events with a SHA-256 ledger.</p></div>
+<div><b>05</b><h3>QR Verification</h3><p>Let customers view the public batch story.</p></div>
+</div></section>
+<section class="section feature-grid">
+<div class="feature"><span>🐝</span><h3>Smart Beekeeping</h3><p>Simulated monitoring, status rules and alerts without hardware.</p></div>
+<div class="feature"><span>🔗</span><h3>Blockchain Ledger</h3><p>Real local SHA-256 hash chaining and integrity checks.</p></div>
+<div class="feature"><span>📱</span><h3>QR Traceability</h3><p>Public, mobile-friendly batch verification.</p></div>
+</div></section>
+{% endblock %}
